@@ -1,6 +1,7 @@
 import { arraysEqual } from "../arraysEqual";
 import { listToMatrix } from "../listToMatrix";
 import { shuffleArray } from "../shuffleArray";
+import { swapElements } from "../swapElements";
 
 test("arraysEqual is true", () => {
   expect(arraysEqual([1], [1])).toBe(true);
@@ -20,3 +21,7 @@ test("listToMatrix returns a matrix", () => {
 test("shuffleArray does not return an identical array", () => {
   expect(shuffleArray([1, 2, 3, 4])).not.toBe([1, 2, 3, 4]);
 });
+
+test("swapElements swaps elements", () => {
+    expect(swapElements(1, 2, [1, 2, 3, 4])).toBe([2, 1, 3, 4]);
+  });
