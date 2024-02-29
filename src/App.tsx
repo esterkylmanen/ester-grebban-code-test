@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import GameBoard from "./components/GameBoard";
+import GameBoard from "./components/GameBoard/GameBoard";
 import { shuffleArray } from "./utils/shuffleArray";
-import { Button } from "./components/Button";
+import { Button } from "./components/Button/Button";
 
 function App() {
   const rows: number = 4;
@@ -24,25 +24,26 @@ function App() {
   }
 
   function handleRestart() {
-    setWin(false)
+    setWin(false);
   }
 
   return (
     <div className="App">
       {!win && (
         <>
+          <h1>Spela n-pussel!</h1>
           <GameBoard
             shuffledArray={shuffledArray}
             sortedArray={bricksArray}
             setWin={setWin}
             columns={columns}
           />
-          <Button onClick={() => handleShuffle()}>Slumpa</Button>
+          <Button data-testid="button-test-id" onClick={() => handleShuffle()}>Slumpa</Button>
         </>
       )}
       {win && (
         <>
-          <div>KING! DU VANN!</div>
+          <div data-testid="win-text-test-id">KING! DU VANN!</div>
           <Button onClick={() => handleRestart()}>Igen!</Button>
         </>
       )}

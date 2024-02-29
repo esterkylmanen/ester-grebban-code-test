@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "./Button";
+import { Button } from "../Button/Button";
 
 interface BrickProps {
   number: number;
@@ -21,7 +21,7 @@ function Brick({ number, onClick }: BrickProps) {
   const shownNumber = number !== 0 ? number : "";
 
   return (
-    <StyledBrick onClick={handleClick} className="brick" number={number}>
+    <StyledBrick data-testid="brick-test-id" onClick={handleClick} className="brick" number={number}>
       {shownNumber}
     </StyledBrick>
   );

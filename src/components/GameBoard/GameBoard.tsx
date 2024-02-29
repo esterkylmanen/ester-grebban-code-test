@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { shuffleArray } from "../utils/shuffleArray";
+import { shuffleArray } from "../../utils/shuffleArray";
 import { useEffect, useState } from "react";
-import Brick from "./Brick";
-import { listToMatrix } from "../utils/listToMatrix";
-import { swapElements } from "../utils/swapElements";
-import { arraysEqual } from "../utils/arraysEqual";
+import Brick from "../Brick/Brick";
+import { listToMatrix } from "../../utils/listToMatrix";
+import { swapElements } from "../../utils/swapElements";
+import { arraysEqual } from "../../utils/arraysEqual";
 import { sort } from "semver";
 
 interface GameBoardProps {
@@ -99,7 +99,7 @@ function GameBoard({
   }
 
   return (
-    <StyledGameBoard columns={columns}>
+    <StyledGameBoard columns={columns} data-testid="game-board-test-id">
       {shuffledArray.flat().map((brick) => {
         return <Brick key={brick} onClick={() => move(brick)} number={brick} />;
       })}
