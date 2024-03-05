@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { shuffleArray } from "../../utils/shuffleArray";
 import { useEffect, useState } from "react";
 import Brick from "../Brick/Brick";
 import { listToMatrix } from "../../utils/listToMatrix";
 import { swapElements } from "../../utils/swapElements";
 import { arraysEqual } from "../../utils/arraysEqual";
-import { sort } from "semver";
 
 interface GameBoardProps {
   columns: number;
